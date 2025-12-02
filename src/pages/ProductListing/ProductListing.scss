@@ -15,4 +15,16 @@
     justify-content: center;
     align-items: center;
   }
+
+  @media (max-width: 600px) {
+    height: auto;
+    min-height: calc(100vh - 60px);
+    padding: 12px;
+
+    .listing {
+      justify-content: flex-start;
+      align-items: stretch;
+      padding-top: 8px;
+    }
+  }
 }
