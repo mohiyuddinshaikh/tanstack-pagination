@@ -1,7 +1,12 @@
 import { useNavigate } from "react-router";
 import "./Header.scss";
+import { Menu } from "lucide-react";
 
-export default function Header() {
+interface HeaderProps {
+  toggleDrawer: () => void;
+}
+
+export default function Header({ toggleDrawer }: HeaderProps) {
   const navigate = useNavigate();
 
   const goHome = () => {
@@ -13,6 +18,7 @@ export default function Header() {
       <h1 className="header_title" onClick={goHome}>
         Tanstack Pagination
       </h1>
+      <Menu size={36} onClick={toggleDrawer} className="cursor-pointer" />
     </div>
   );
 }
