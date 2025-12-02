@@ -1,5 +1,8 @@
 
 The project is built using Vite
+
+Find the demo here: https://tanstack-pagination-moin.netlify.app/
+
 ## Installation
 
 Clone the repository - https://github.com/mohiyuddinshaikh/tanstack-pagination
