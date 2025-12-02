@@ -1,0 +1,20 @@
+.header_container {
+  height: 60px;
+  background-color: #003153;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header_title {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+}
+.header_nav {
+  display: flex;
+  gap: 15px;
+}
