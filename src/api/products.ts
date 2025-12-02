@@ -16,7 +16,6 @@ export async function fetchProducts(
   limit: number = 10
 ): Promise<PaginatedResponse<Product>> {
   // throw new Error("Mock API fail");
-
   const skip = (page - 1) * limit;
 
   const res = await fetch(

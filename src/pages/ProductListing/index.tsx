@@ -6,12 +6,16 @@ import type { Product } from "../../api/products";
 import Card from "../../components/Card";
 import CardSkeleton from "../../components/CardSkeleton";
 import NoProducts from "../../components/NoProducts";
+import Error from "@/components/Error";
 
 export default function ProductListing() {
   const [page, setPage] = useState<number>(1);
   const limit = 10;
 
-  const { data, isLoading, error, isFetching } = useProducts(page, limit);
+  const { data, isLoading, error, isFetching, refetch } = useProducts(
+    page,
+    limit
+  );
 
   const products = data?.data ?? [];
 
@@ -27,7 +31,7 @@ export default function ProductListing() {
     <div className="product_listing_container">
       <ul className="listing">
         {error ? (
-          <p className="error_message">Failed to load products. Try again.</p>
+          <Error refetch={refetch} />
         ) : isLoading || isFetching ? (
           <CardSkeleton />
         ) : products.length === 0 ? (
@@ -43,6 +47,7 @@ export default function ProductListing() {
         page={page}
         totalPages={totalPages}
         onChange={handlePageChange}
+        disabled={isFetching || isLoading || !!error}
       />
     </div>
   );

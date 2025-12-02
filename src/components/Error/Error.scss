@@ -1,0 +1,13 @@
+.error_message {
+  padding: 20px;
+  border-radius: 8px;
+  margin: 20px 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  p {
+    font-size: large;
+  }
+}
